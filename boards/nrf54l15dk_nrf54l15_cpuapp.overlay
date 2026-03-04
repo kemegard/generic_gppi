@@ -1,0 +1,42 @@
+/*
+ * Copyright (c) 2026
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+/* Ensure GPIO ports and GPIOTE are enabled for nrfx direct access */
+
+&gpio0 {
+	status = "okay";
+};
+
+&gpio1 {
+	status = "okay";
+};
+
+&gpio2 {
+	status = "okay";
+};
+
+&gpiote20 {
+	status = "okay";
+	owned-channels = <0 1>;
+};
+
+/* Override LED1 and button to use gpiote instance explicitly */
+/ {
+	leds {
+		compatible = "gpio-leds";
+		led1: led_1 {
+			gpios = <&gpio1 10 GPIO_ACTIVE_HIGH>;
+			gpiote-instance = <&gpiote20>;
+		};
+	};
+	
+	buttons {
+		compatible = "gpio-keys";
+		button0: button_0 {
+			gpios = <&gpio1 13 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+			gpiote-instance = <&gpiote20>;
+		};
+	};
+};
