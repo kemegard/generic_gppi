@@ -172,11 +172,6 @@ GPPI is ideal for:
 - Ensure `CONFIG_NRFX_GPIOTE20=y` is set in prj.conf
 - The GPIOTE driver library must be enabled explicitly
 
-### Build must be run from NCS workspace
-- Don't run `west build` from the project directory
-- Always run from `d:\work\ncs\v3.2.3` (or your NCS installation path)
-- Use the full project path as the argument
-
 ### LED doesn't toggle on button press
 - **Ensure you're using a GPIO port that supports GPIOTE!** GPIO2 does NOT support GPIOTE on nRF54L15
 - Only GPIO0 and GPIO1 support GPIOTE on nRF54L15
