@@ -35,11 +35,11 @@ The GPPI API provides a unified interface for connecting peripheral events to pe
 ## How It Works
 
 ```
-┌──────────┐      GPIOTE Event       ┌──────────┐      GPPI        ┌──────────┐      GPIOTE Task      ┌──────┐
-│ Button 0 │ ──> (Input Channel) ──> │   DPPI   │ ──> Connection ──> (Output Channel) ──> │ LED 1  │
-│  Press   │                          │  Channel │                                          │ Toggle │
-└──────────┘                          └──────────┘                                          └────────┘
-   GPIO1.13                                                                                   GPIO1.10
+┌──────────┐      GPIOTE Event        ┌──────────┐       GPIOTE Task        ┌────────┐
+│ Button 0 │ ──> (Input Channel) ──>  │   DPPI   │ ──> (Output Channel) ──> │ LED 1  │
+│  Press   │                          │  Channel │                          │ Toggle │
+└──────────┘                          └──────────┘                          └────────┘
+   GPIO1.13                                                                  GPIO1.10
 ```
 
 ### The Process:
